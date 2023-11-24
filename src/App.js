@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import FileUpload from './FileUpload';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [iepContent, setIepContent] = useState('');
+
+    useEffect(() => {
+        // Fetch the content of public/iep.html
+        fetch('.*/uploads/iep_copy.html')
+            .then(response => response.text())
+            .then(content => setIepContent(content))
+            .catch(error => console.error('Error fetching iep.html:', error));
+    }, []);
+
+    return (
+        <div className="App">
+            <header className="App-header">
+                <h1>React OpenAI App</h1>
+                <FileUpload />
+            </header>
+        </div>
+    );
 }
 
 export default App;
+
+
+
+
