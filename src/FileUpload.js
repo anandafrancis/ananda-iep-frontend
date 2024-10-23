@@ -20,9 +20,8 @@ const FileUpload = () => {
         method: 'POST',
         body: formData,
         headers: {
-          // Add any necessary headers here, e.g., authorization or content-type
         },
-        mode: 'cors',  // Ensure this line is present
+        mode: 'cors', 
       });
 
       if (!response.ok) {
