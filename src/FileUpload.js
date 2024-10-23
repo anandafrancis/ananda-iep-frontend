@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ChatBot from './ChatBot'; // Make sure to import the ChatBot component
+import ChatBot from './ChatBot';
 import HtmlDisplay from './ShowHtml';
 
 const FileUpload = () => {
